@@ -1,26 +1,284 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9f9f8;
+  --foreground: #18181b;
+  --card-bg: #ffffff;
+  --card-border: #e4e4e7;
+  --accent-orange: #ff4502;
+  --accent-orange-hover: #e03d00;
+  --text-muted: #71717a;
+  --text-dim: #a1a1aa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+html {
+  background-color: #f9f9f8;
+  color: #18181b;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9f9f8;
+  color: #18181b;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: #ff4502;
+  selection-color: #ffffff;
 }
+
+/* Hide scrollbars for clean studio horizontal view */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Typography styles matching Outpace Studios */
+.heading-display {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.heading-sub {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+/* Outpace Studio Pill Buttons */
+.btn-primary {
+  background-color: #18181b;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 0.65rem 1.35rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04);
+}
+.btn-primary:hover {
+  background-color: #27272a;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #18181b;
+  border: 1px solid #e4e4e7;
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 0.65rem 1.35rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.btn-secondary:hover {
+  background-color: #f4f4f5;
+  border-color: #d4d4d8;
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  background-color: #ff4502;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 0.65rem 1.35rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(255, 69, 2, 0.3);
+}
+.btn-accent:hover {
+  background-color: #e03d00;
+  box-shadow: 0 6px 20px rgba(255, 69, 2, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Studio cards */
+.studio-card {
+  background-color: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.studio-card:hover {
+  border-color: #d4d4d8;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
+}
+
+/* Floating custom cursor badge (Desktop) */
+.view-work-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  background-color: #18181b;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease-out, opacity 0.2s ease-in-out;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Fudali Studio Mobile Micro-Animations & Effects */
+@keyframes mobile-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+}
+
+@keyframes mobile-float-delayed {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(-1deg);
+  }
+}
+
+@keyframes ambient-pulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-mobile-float {
+  animation: mobile-float 4.5s ease-in-out infinite;
+}
+
+.animate-mobile-float-delayed {
+  animation: mobile-float-delayed 5.2s ease-in-out infinite 0.8s;
+}
+
+.animate-ambient-pulse {
+  animation: ambient-pulse 6s ease-in-out infinite;
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Tactile mobile press effect */
+.touch-card {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+.touch-card:active {
+  transform: scale(0.985);
+}
+
+/* Mobile Dock Backdrop Glassmorphism */
+.mobile-dock-glass {
+  background: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle Water Wave Sheen on Photo Hover */
+@keyframes water-wave-sheen {
+  0% {
+    transform: translateY(120%) rotate(-5deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.35;
+  }
+  60% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-130%) rotate(-5deg);
+    opacity: 0;
+  }
+}
+
+.animate-water-wave {
+  animation: water-wave-sheen 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes water-breathe {
+  0%, 100% {
+    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.12));
+  }
+  50% {
+    filter: drop-shadow(0 25px 45px rgba(255, 69, 2, 0.16)) drop-shadow(0 10px 20px rgba(251, 191, 36, 0.1));
+  }
+}
+
+.water-wave-hover:hover .water-sheen {
+  opacity: 1;
+}
+
+/* 3D Spatial Dialog Entrance */
+@keyframes modal-3d-entrance {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(12deg) translateY(35px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) translateY(0px) scale(1);
+  }
+}
+
+.animate-modal-3d {
+  animation: modal-3d-entrance 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: center bottom;
+}
+
+/* Fudali Studio Mobile Continuous Marquee Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
+
+
