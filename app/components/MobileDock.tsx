@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Briefcase, Layers, Cpu, Milestone, Mail, FileText, MessageSquare } from "lucide-react";
+import { Briefcase, Layers, Cpu, Milestone, User, Mail, FileText, MessageSquare } from "lucide-react";
 
 interface MobileDockProps {
   activeSection: string;
@@ -15,10 +15,11 @@ export default function MobileDock({
   onOpenResume,
 }: MobileDockProps) {
   const navItems = [
-    { id: "work", label: "Work", icon: Briefcase },
     { id: "services", label: "Services", icon: Layers },
     { id: "tech", label: "Stack", icon: Cpu },
+    { id: "work", label: "Work", icon: Briefcase },
     { id: "journey", label: "Journey", icon: Milestone },
+    { id: "about", label: "About", icon: User },
     { id: "contact", label: "Contact", icon: Mail },
   ];
 
@@ -71,11 +72,11 @@ export default function MobileDock({
 
           {/* Quick WhatsApp Direct */}
           <a
-            href="https://wa.me/919999999999?text=Hello%20Moh%20Abuzar,%20I%20saw%20your%20studio%20portfolio%20and%20would%20love%20to%20discuss%20a%20project."
+            href="https://wa.me/919045757272?text=Hello%20Moh%20Abuzar,%20I%20saw%20your%20studio%20portfolio%20and%20would%20love%20to%20discuss%20a%20project."
             target="_blank"
             rel="noreferrer"
             className="p-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center transition-all shadow-sm shadow-emerald-500/30 cursor-pointer relative"
-            title="Instant WhatsApp Chat"
+            title="Instant WhatsApp Chat (+91 9045757272)"
           >
             <MessageSquare className="w-3.5 h-3.5" />
             <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400 animate-ping-slow" />

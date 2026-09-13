@@ -13,53 +13,55 @@ interface JourneyMilestone {
 
 const milestones: JourneyMilestone[] = [
   {
-    year: "2024 — Present",
-    role: "Founder & Lead Software Architect",
-    company: "CoCode Studio",
-    badge: "FOUNDER MILESTONE",
+    year: "2018 — 2023",
+    role: "Self-Taught Tech Explorer",
+    company: "Early Roots (8th Standard)",
+    badge: "SELF-TAUGHT",
     summary:
-      "Founded CoCode Studio to deliver senior-led full-stack development and UI/UX product design to venture-backed startups and high-growth founders worldwide.",
+      "Started exploring coding and tech in 8th standard without any formal IT background. Spent 5 dedicated years mastering software fundamentals, modern web stacks, and system architecture until fully production-ready.",
     achievements: [
-      "Partnered with funded startups across YC, Techstars, and top VC portfolios",
-      "Helped client partners raise over $25M+ in combined capital",
-      "Built 15+ zero-to-one production platforms with 99.8% on-time delivery",
+      "Started exploring computers & code in 8th grade",
+      "Zero formal schooling — purely curiosity-driven mastery",
+      "Mastered frontend, backend & full systems by 2023",
     ],
   },
   {
     year: "2023 — 2024",
-    role: "Lead Full-Stack Architect",
-    company: "TechNova Cloud",
-    badge: "SCALE & PERFORMANCE",
+    role: "Independent Full-Stack Freelancer",
+    company: "Global Online Freelancing",
+    badge: "COMMERCIAL LAUNCH",
     summary:
-      "Spearheaded distributed system architecture and Next.js cloud engineering for high-throughput enterprise SaaS applications.",
+      "Stepped into active online freelancing, partnering directly with founders and international clients to engineer commercial web apps, custom platforms, and production-ready digital products.",
     achievements: [
-      "Scaled architecture to support 500K+ monthly active users",
-      "Achieved 99.99% system availability with sub-second API latency",
-      "Mentored engineering pods on TypeScript and clean code best practices",
+      "Delivered real-world client platforms with zero fluff",
+      "End-to-end execution: UI design, APIs & database logic",
+      "Maintained 100% client satisfaction and repeat trust",
     ],
   },
   {
-    year: "2021 — 2023",
-    role: "Senior Creative & Frontend Engineer",
-    company: "Vortex Digital",
-    badge: "3D & MOTION",
+    year: "2024 — 2027",
+    role: "BCA Computer Applications",
+    company: "Shobhit University, Gangoh",
+    badge: "ACADEMIC FOUNDATION",
     summary:
-      "Engineered high-impact 3D WebGL interfaces, interactive spatial canvases, and modern design systems.",
+      "Pursuing formal Computer Applications (BCA) degree to complement practical engineering expertise with computer science theory, advanced algorithms, and software engineering standards.",
     achievements: [
-      "Reduced Core Web Vitals LCP times by 40% across flagship web properties",
-      "Pioneered in-house 3D interactive canvas toolkits",
+      "Pursuing BCA degree at Shobhit University, Gangoh",
+      "Bridging practical full-stack craft with computer science",
+      "Active parallel building alongside academic studies",
     ],
   },
   {
-    year: "2017 — 2021",
-    role: "B.Tech in Computer Science & Engineering",
-    company: "University Institute of Technology",
-    badge: "ACADEMIC HONORS",
+    year: "2025 — Present",
+    role: "Founder & Lead Architect",
+    company: "CoCode Studio",
+    badge: "STUDIO FOUNDER",
     summary:
-      "Graduated First Class with Academic Distinction. Deep theoretical and practical foundation in algorithms, operating systems, and computer graphics.",
+      "Founded CoCode Studio to partner directly with founders and ambitious startups — architecting and shipping high-performance web & mobile platforms that drive real revenue.",
     achievements: [
-      "President of University Web Innovation & Hackathon Guild",
-      "Published research on high-performance data structures",
+      "Architecting end-to-end web & mobile platforms",
+      "Direct senior founder access with zero agency overhead",
+      "99.8% on-time milestone delivery for client platforms",
     ],
   },
 ];
@@ -68,36 +70,33 @@ export default function StudioJourney() {
   return (
     <section
       id="journey"
-      className="flex-shrink-0 w-full md:w-[1250px] lg:w-[1400px] min-h-[100vh] md:h-full flex flex-col justify-start md:justify-center px-5 sm:px-6 md:px-12 pt-28 md:pt-32 pb-24 md:pb-28"
+      className="flex-shrink-0 w-full md:w-screen min-h-screen md:h-full flex flex-col justify-start md:justify-center px-6 sm:px-10 md:px-16 lg:px-24 pt-20 sm:pt-22 md:pt-24 pb-24 sm:pb-24 md:pb-16 lg:pb-18 overflow-visible"
     >
-      <div className="flex flex-col gap-6 md:gap-8">
+      <div className="my-auto w-full max-w-7xl mx-auto flex flex-col gap-4 md:gap-5 lg:gap-6">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="flex flex-col gap-2 max-w-xl">
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-[#ff4502]">
-              {"// SUCCESS JOURNEY"}
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] leading-[1.1] text-[#18181b]">
-              <span className="text-[#a1a1aa] font-medium">From engineer to founder.</span> <br />
-              <span>A relentless pursuit of craft.</span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
+          <div className="flex flex-col gap-1.5 max-w-xl">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-[-0.03em] leading-[1.12] text-[#18181b]">
+              <span className="text-[#a1a1aa] font-medium">From passionate builder</span> <br />
+              <span>to studio founder.</span>
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#71717a] max-w-xs font-medium">
-            How passion for code and design evolved into founding CoCode Studio and architecting software for ambitious founders.
+            A consistent track record of building production software, scaling architectures, and helping founders launch products that win.
           </p>
         </div>
 
         {/* Horizontal Milestones Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 pt-3 border-t border-[#e4e4e7]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 md:gap-4 lg:gap-4.5 pt-2 border-t border-[#e4e4e7]">
           {milestones.map((m) => (
             <div
               key={m.year}
-              className="touch-card p-5 rounded-2xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/50 hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+              className="touch-card p-4 sm:p-4.5 lg:p-5 rounded-2xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/50 hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono font-bold text-[#ff4502] bg-[#ff4502]/10 px-2.5 py-1 rounded-full">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono font-bold text-[#ff4502] bg-[#ff4502]/10 px-2.5 py-0.5 rounded-full">
                     {m.year}
                   </span>
                   <span className="text-[10px] font-mono text-[#a1a1aa] uppercase tracking-wider">
@@ -105,19 +104,19 @@ export default function StudioJourney() {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-[#18181b] group-hover:text-[#ff4502] transition-colors mb-1 leading-snug">
+                <h3 className="text-base sm:text-lg font-bold text-[#18181b] group-hover:text-[#ff4502] transition-colors mb-0.5 leading-snug">
                   {m.role}
                 </h3>
-                <p className="text-xs font-semibold text-[#71717a] mb-4">
+                <p className="text-xs font-semibold text-[#71717a] mb-2.5">
                   {m.company}
                 </p>
 
-                <p className="text-xs text-[#71717a] leading-relaxed mb-4">
+                <p className="text-xs text-[#71717a] leading-relaxed mb-3">
                   {m.summary}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#f4f4f5] space-y-1.5">
+              <div className="pt-3 border-t border-[#f4f4f5] space-y-1">
                 {m.achievements.map((item, i) => (
                   <div key={i} className="flex items-start gap-1.5 text-[11px] text-[#71717a] leading-tight">
                     <span className="text-[#ff4502] font-bold">▹</span>

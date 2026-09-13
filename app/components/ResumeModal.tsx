@@ -55,15 +55,15 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-[#f9f9f8] border border-[#e4e4e7] text-xs font-mono text-[#71717a] mb-8">
           <div>
             <span className="text-[#a1a1aa] block text-[10px]">EMAIL</span>
-            <span className="text-[#18181b] font-semibold">mohabuzar.dev@gmail.com</span>
+            <a href="mailto:support@cocodestudio.com" className="text-[#18181b] font-semibold hover:text-[#ff4502] truncate block no-underline">support@cocodestudio.com</a>
+          </div>
+          <div>
+            <span className="text-[#a1a1aa] block text-[10px]">DIRECT PHONE</span>
+            <a href="tel:+919045757272" className="text-[#18181b] font-semibold hover:text-[#ff4502] no-underline">+91 9045757272</a>
           </div>
           <div>
             <span className="text-[#a1a1aa] block text-[10px]">COMPANY</span>
             <span className="text-[#18181b] font-semibold">CoCode Studio</span>
-          </div>
-          <div>
-            <span className="text-[#a1a1aa] block text-[10px]">LOCATION</span>
-            <span className="text-[#18181b] font-semibold">Global / Remote</span>
           </div>
           <div>
             <span className="text-[#a1a1aa] block text-[10px]">STATUS</span>
@@ -77,7 +77,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             Executive Profile
           </h3>
           <p className="text-sm text-[#71717a] leading-relaxed">
-            Senior Full-Stack Software Engineer and Founder of CoCode Studio with 5+ years of production experience architecting high-velocity web applications, enterprise SaaS platforms, and interactive 3D interfaces. Specialized in React 19, Next.js 16, TypeScript, Node.js, and cloud systems with a track record of enabling clients to raise over $25M+ in venture funding.
+            Senior Full-Stack Software Engineer and Founder of CoCode Studio with 6+ years of active development experience architecting high-velocity web platforms, modern digital products, and robust cloud systems. Specialized in Next.js, React, Node.js, Laravel, Flutter, and clean UI/UX with a verified track record of shipping 10+ production-deployed projects across commercial client contracts, collegiate systems, and independent platforms.
           </p>
         </div>
 
@@ -93,37 +93,37 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <div className="flex flex-wrap items-center justify-between gap-1 mb-1">
                 <h4 className="text-base font-bold text-[#18181b]">Founder &amp; Principal Architect</h4>
                 <span className="text-xs font-mono text-[#ff4502] bg-[#ff4502]/10 px-2.5 py-0.5 rounded-full font-semibold">
-                  2024 — Present
+                  2025 — Present
                 </span>
               </div>
               <p className="text-xs font-medium text-[#71717a] mb-2">CoCode Studio • Global</p>
               <ul className="text-xs text-[#71717a] space-y-1 list-disc list-inside">
                 <li>Founded CoCode Studio, leading end-to-end full-stack engineering and product design sprints for high-growth tech startups.</li>
-                <li>Shipped 15+ production platforms with sub-second latency, zero downtime, and high conversion UX.</li>
-                <li>Partnered directly with founders across Silicon Valley, NYC, and global hubs on AI and Web3 initiatives.</li>
+                <li>Shipped production platforms with sub-second latency, zero downtime, and high conversion UX.</li>
+                <li>Direct senior founder partnership with 100% on-time milestone delivery.</li>
               </ul>
             </div>
 
             <div>
               <div className="flex flex-wrap items-center justify-between gap-1 mb-1">
-                <h4 className="text-base font-bold text-[#18181b]">Lead Full-Stack Software Engineer</h4>
-                <span className="text-xs font-mono text-[#71717a]">2022 — 2024</span>
+                <h4 className="text-base font-bold text-[#18181b]">Independent Full-Stack Freelancer</h4>
+                <span className="text-xs font-mono text-[#71717a]">2023 — 2024</span>
               </div>
-              <p className="text-xs font-medium text-[#71717a] mb-2">TechNova Cloud Systems</p>
+              <p className="text-xs font-medium text-[#71717a] mb-2">Global Online Freelancing</p>
               <ul className="text-xs text-[#71717a] space-y-1 list-disc list-inside">
-                <li>Architected scalable microservices handling 500K+ monthly active users with Next.js, Node.js, and PostgreSQL.</li>
-                <li>Reduced Core Web Vitals LCP by 40% and improved search ranking across enterprise client portfolios.</li>
+                <li>Collaborated directly with clients and founders worldwide to engineer commercial web apps, custom platforms, and business solutions.</li>
+                <li>Handled complete engineering lifecycle: UI design, backend APIs, database architecture, and deployment.</li>
               </ul>
             </div>
 
             <div>
               <div className="flex flex-wrap items-center justify-between gap-1 mb-1">
-                <h4 className="text-base font-bold text-[#18181b]">Frontend &amp; 3D Creative Engineer</h4>
-                <span className="text-xs font-mono text-[#71717a]">2021 — 2022</span>
+                <h4 className="text-base font-bold text-[#18181b]">Self-Taught Developer &amp; Tech Explorer</h4>
+                <span className="text-xs font-mono text-[#71717a]">2018 — 2023</span>
               </div>
-              <p className="text-xs font-medium text-[#71717a] mb-2">Vortex Digital Labs</p>
+              <p className="text-xs font-medium text-[#71717a] mb-2">Early Foundations (8th Standard)</p>
               <ul className="text-xs text-[#71717a] space-y-1 list-disc list-inside">
-                <li>Developed interactive WebGL 3D product customizers, canvas shaders, and fluid responsive design systems.</li>
+                <li>Started coding in 8th standard purely driven by curiosity, mastering programming logic, web stacks, and system fundamentals.</li>
               </ul>
             </div>
           </div>
@@ -137,12 +137,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
             <div className="p-3 rounded-xl bg-[#f9f9f8] border border-[#e4e4e7]">
-              <span className="font-bold text-[#18181b] block mb-1">Frontend &amp; UI Architecture</span>
-              <span className="text-[#71717a]">Next.js 16, React 19, TypeScript, Tailwind CSS, WebGL, Three.js, Canvas</span>
+              <span className="font-bold text-[#18181b] block mb-1">Frontend &amp; Mobile</span>
+              <span className="text-[#71717a]">Next.js, React, Flutter, Dart, TypeScript, Modern UI/UX, Design Systems</span>
             </div>
             <div className="p-3 rounded-xl bg-[#f9f9f8] border border-[#e4e4e7]">
               <span className="font-bold text-[#18181b] block mb-1">Backend &amp; Cloud Infrastructure</span>
-              <span className="text-[#71717a]">Node.js, Express, Python, PostgreSQL, Prisma, Redis, Docker, Vercel, AWS</span>
+              <span className="text-[#71717a]">PHP, Laravel, Node.js, PostgreSQL, MongoDB, Firebase, AWS (EC2, Route 53, S3), Vercel</span>
             </div>
           </div>
         </div>
@@ -155,10 +155,10 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </h3>
           <div className="flex items-center justify-between text-xs">
             <div>
-              <span className="font-bold text-[#18181b]">Bachelor of Technology (B.Tech) — Computer Science &amp; Engineering</span>
-              <span className="text-[#71717a] block">University Institute of Technology • First Class with Distinction</span>
+              <span className="font-bold text-[#18181b]">Bachelor of Computer Applications (BCA)</span>
+              <span className="text-[#71717a] block">Shobhit University, Gangoh</span>
             </div>
-            <span className="text-xs font-mono text-[#71717a]">2017 — 2021</span>
+            <span className="text-xs font-mono text-[#71717a]">2024 — 2027</span>
           </div>
         </div>
 

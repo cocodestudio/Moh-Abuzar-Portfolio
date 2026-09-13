@@ -4,27 +4,27 @@ import Image from "next/image";
 
 export default function StudioAbout() {
   const metrics = [
-    { value: "$25M+", label: "Client Capital Raised", desc: "Across YC, Techstars & Seed" },
-    { value: "35+", label: "Production Platforms Shipped", desc: "SaaS, Web3 & Mobile" },
-    { value: "99.8%", label: "Milestone Success Rate", desc: "Founder speed with zero fluff" },
-    { value: "5+ Years", label: "Software Architecture", desc: "Full-stack, UI/UX & Cloud" },
+    { value: "₹5L+", label: "Client Value Generated", desc: "Commercial & freelance impact" },
+    { value: "10+", label: "Production Projects Deployed", desc: "Client, college & live apps" },
+    { value: "100%", label: "Milestone Success Rate", desc: "Founder speed with zero fluff" },
+    { value: "7+ Years", label: "Active in Code & Tech", desc: "Self-taught roots to studio" },
   ];
 
   return (
     <section
       id="about"
-      className="flex-shrink-0 w-full md:w-[1200px] lg:w-[1350px] min-h-[100vh] md:h-full flex flex-col justify-start md:justify-center px-5 sm:px-6 md:px-12 pt-28 md:pt-32 pb-24 md:pb-28"
+      className="flex-shrink-0 w-full md:w-screen min-h-screen md:h-full flex flex-col justify-start md:justify-center px-6 sm:px-10 md:px-16 lg:px-24 pt-20 sm:pt-22 md:pt-24 pb-24 sm:pb-24 md:pb-16 lg:pb-18 overflow-visible"
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-        
+      <div className="my-auto w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-center">
+
         {/* Left Column: Seamless Transparent Portrait 2 */}
         <div className="md:col-span-5 flex justify-center items-center relative select-none">
-          
-          {/* Ambient Studio Lighting Glow */}
-          <div className="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-[#ff4502]/15 via-[#fbbf24]/10 to-transparent blur-3xl pointer-events-none -z-10 animate-ambient-pulse" />
 
-          <div className="relative w-full max-w-[340px] sm:max-w-[380px] h-[450px] sm:h-[500px] flex items-end justify-center group">
-            
+          {/* Ambient Studio Lighting Glow */}
+          <div className="absolute w-64 sm:w-72 h-64 sm:h-72 rounded-full bg-gradient-to-tr from-[#ff4502]/15 via-[#fbbf24]/10 to-transparent blur-3xl pointer-events-none -z-10 animate-ambient-pulse" />
+
+          <div className="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[300px] lg:max-w-[360px] h-[320px] sm:h-[380px] md:h-[40vh] lg:h-[460px] max-h-[480px] flex items-end justify-center group">
+
             {/* Seamless Portrait Fade */}
             <div
               className="relative w-full h-full"
@@ -43,12 +43,12 @@ export default function StudioAbout() {
             </div>
 
             {/* Editorial Caption Tag */}
-            <div className="absolute bottom-6 left-2 right-2 bg-white/95 backdrop-blur-md border border-[#e4e4e7] rounded-2xl p-3.5 shadow-md shadow-black/5 z-20">
+            <div className="absolute bottom-3 left-2 right-2 bg-white/95 backdrop-blur-md border border-[#e4e4e7] rounded-xl sm:rounded-2xl p-2.5 sm:p-3 shadow-md shadow-black/5 z-20">
               <span className="text-[10px] font-mono uppercase tracking-widest text-[#ff4502] block mb-0.5">
-                Leadership Philosophy
+                Founder Philosophy
               </span>
               <p className="text-xs font-semibold text-[#18181b] leading-tight">
-                &ldquo;Senior engineering firepower without the agency bloat or freelance headaches.&rdquo;
+                &ldquo;Great software isn&apos;t built by corporate committees. It is forged by obsessive builders who treat your vision like their own company: zero fluff, relentless execution, and code built to dominate.&rdquo;
               </p>
             </div>
 
@@ -57,36 +57,32 @@ export default function StudioAbout() {
 
         {/* Right Column: Narrative & Big Numbers */}
         <div className="md:col-span-7 flex flex-col items-start text-left">
-          
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-[#ff4502] mb-3">
-            {"// ABOUT & LEADERSHIP"}
-          </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] leading-[1.1] text-[#18181b] mb-6">
-            Senior-led engineering &amp; <br />
-            <span className="text-[#a1a1aa] font-medium">product architecture.</span>
+          <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-[-0.03em] leading-[1.12] text-[#18181b] mb-4 lg:mb-6">
+            Software engineer &amp; founder. <br />
+            <span className="text-[#a1a1aa] font-medium">Building products that actually ship.</span>
           </h2>
 
-          <div className="space-y-4 text-sm sm:text-base text-[#71717a] leading-relaxed mb-8 max-w-xl">
+          <div className="space-y-3 text-xs sm:text-sm lg:text-base text-[#71717a] leading-relaxed mb-5 lg:mb-6 max-w-xl">
             <p>
-              I am <strong className="text-[#18181b] font-semibold">Moh Abuzar</strong>, a software engineer and the Founder of <strong className="text-[#18181b] font-semibold">CoCode Studio</strong>. I partner directly with founders, CTOs, and product leaders who can&apos;t afford to waste months on bloated agency hierarchies.
+              You do not need a 20-person agency, endless sprint meetings, or junior developers learning on your dime. You need an experienced full-stack partner who treats your product like their own.
             </p>
             <p>
-              At CoCode Studio, we bridge high-converting aesthetic design with bulletproof code. We don&apos;t just write components; we craft complete user journeys, resilient databases, and interactive web experiences that drive tangible revenue and investor confidence.
+              I am <strong className="text-[#18181b] font-semibold">Moh Abuzar</strong>, Founder of <strong className="text-[#18181b] font-semibold">CoCode Studio</strong>. Active in software development since 2018, I have engineered and deployed 10+ production projects across commercial client contracts, collegiate platforms, and independent web products — delivering clean architecture on time, on budget, and with zero agency fluff.
             </p>
           </div>
 
           {/* Big Metric Numbers */}
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 w-full max-w-xl pt-6 border-t border-[#e4e4e7]">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 w-full max-w-xl pt-4 lg:pt-5 border-t border-[#e4e4e7]">
             {metrics.map((m) => (
               <div key={m.label} className="flex flex-col">
-                <span className="text-3xl sm:text-4xl font-bold tracking-tight text-[#18181b]">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#18181b]">
                   {m.value}
                 </span>
-                <span className="text-xs sm:text-sm font-semibold text-[#18181b] mt-1">
+                <span className="text-xs sm:text-sm font-semibold text-[#18181b] mt-0.5">
                   {m.label}
                 </span>
-                <span className="text-[11px] text-[#a1a1aa] font-mono">
+                <span className="text-[10px] sm:text-[11px] text-[#a1a1aa] font-mono">
                   {m.desc}
                 </span>
               </div>

@@ -22,18 +22,20 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mohabuzar.dev"),
-  title: "Moh Abuzar — Product Design & Full-Stack Engineering Studio",
+  title: "Moh Abuzar — Senior Software Engineer & Founder @ CoCode Studio",
   description:
-    "Senior full-stack engineer and UI/UX product architect building high-impact digital experiences, web apps, and modern design systems for venture-backed startups and visionary founders.",
+    "I help founders build high-performance web apps that scale and drive revenue. 10+ production-deployed projects shipped, commercial client impact, zero agency fluff.",
   keywords: [
     "Moh Abuzar",
-    "Portfolio",
-    "Product Designer",
+    "CoCode Studio",
+    "Founder",
+    "Senior Software Engineer",
     "Full-Stack Developer",
-    "UI/UX Architect",
     "Next.js",
     "React",
-    "Design Studio",
+    "TypeScript",
+    "Web App Development",
+    "SaaS MVP",
   ],
   authors: [{ name: "Moh Abuzar" }],
   creator: "Moh Abuzar",
@@ -41,10 +43,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://mohabuzar.dev",
-    title: "Moh Abuzar — Product Design & Full-Stack Engineering Studio",
+    title: "Moh Abuzar — Senior Software Engineer & Founder @ CoCode Studio",
     description:
-      "Senior full-stack engineer and UI/UX product architect building high-impact digital experiences.",
-    siteName: "Moh Abuzar Studio",
+      "I help founders build high-performance web apps that scale and drive revenue. Zero agency fluff.",
+    siteName: "Moh Abuzar Portfolio",
     images: [
       {
         url: "/images/hero-portrait.png",

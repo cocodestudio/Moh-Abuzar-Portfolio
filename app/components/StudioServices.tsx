@@ -3,7 +3,7 @@
 export default function StudioServices() {
   const serviceColumns = [
     {
-      title: "Product & UI/UX",
+      title: "Full-Stack Web Apps",
       glyph: (
         <svg width="44" height="44" viewBox="0 0 64 64" fill="none" className="w-10 h-10 md:w-11 md:h-11">
           <path
@@ -17,16 +17,16 @@ export default function StudioServices() {
         </svg>
       ),
       items: [
-        "Web Applications",
-        "Analytics Dashboards",
-        "Mobile App Interfaces",
-        "Design Systems & Tokens",
-        "SaaS Product Flows",
-        "Conversion Optimization",
+        "Custom SaaS & Web Platforms",
+        "Rapid 0-to-1 MVP Builds",
+        "Next.js & Full-Stack Systems",
+        "Scalable Backend & APIs",
+        "PostgreSQL & Secure Data",
+        "Payment & Auth Integrations",
       ],
     },
     {
-      title: "Full-Stack Engineering",
+      title: "Modern UI/UX & Design",
       glyph: (
         <svg width="44" height="44" viewBox="0 0 64 64" fill="none" className="w-10 h-10 md:w-11 md:h-11">
           <path
@@ -36,16 +36,16 @@ export default function StudioServices() {
         </svg>
       ),
       items: [
-        "Next.js 16 & React 19",
-        "TypeScript Architecture",
-        "Node.js & Express APIs",
-        "PostgreSQL & Prisma",
-        "Redis Caching Layers",
-        "Microservices & Serverless",
+        "Intuitive Product Dashboards",
+        "Responsive Mobile-First UIs",
+        "Clean Design Systems & Tokens",
+        "Smooth User Onboarding Flows",
+        "Conversion-Focused Pages",
+        "Micro-Interactions & Motion",
       ],
     },
     {
-      title: "Creative 3D & Motion",
+      title: "Mobile & Apps",
       glyph: (
         <svg width="44" height="44" viewBox="0 0 64 64" fill="none" className="w-10 h-10 md:w-11 md:h-11">
           <path
@@ -67,16 +67,16 @@ export default function StudioServices() {
         </svg>
       ),
       items: [
-        "Three.js & WebGL 3D",
-        "Canvas Physics Simulations",
-        "Scroll-Driven Parallax",
-        "Interactive Spatial UIs",
-        "Micro-Animations",
-        "Fluid Liquid Transitions",
+        "Cross-Platform Flutter Apps",
+        "Fluid iOS & Android UX",
+        "Push Notifications & Sync",
+        "Offline-First Data Storage",
+        "Camera & Device Hardware APIs",
+        "App Store Launch Readiness",
       ],
     },
     {
-      title: "Cloud & Performance",
+      title: "Production & Cloud",
       glyph: (
         <svg width="44" height="44" viewBox="0 0 64 64" fill="none" className="w-10 h-10 md:w-11 md:h-11">
           <path
@@ -90,12 +90,12 @@ export default function StudioServices() {
         </svg>
       ),
       items: [
-        "100 Lighthouse Scores",
-        "Edge CDN Deployment",
-        "Docker Containerization",
-        "CI/CD Automated Pipelines",
-        "API Security & Rate Limits",
-        "Code Audits & Consulting",
+        "AWS Cloud (EC2, Route 53, S3, Amplify)",
+        "Google Play Console Deployment",
+        "Apple iOS App Store Publishing",
+        "Vercel & Global Edge Hosting",
+        "Firebase Suite & Cloud Infrastructure",
+        "Automated CI/CD & Zero-Downtime Releases",
       ],
     },
   ];
@@ -103,30 +103,27 @@ export default function StudioServices() {
   return (
     <section
       id="services"
-      className="flex-shrink-0 w-full md:w-[1200px] lg:w-[1350px] min-h-[100vh] md:h-full flex flex-col justify-start md:justify-center px-5 sm:px-6 md:px-12 pt-28 md:pt-32 pb-24 md:pb-28"
+      className="flex-shrink-0 w-full md:w-screen min-h-screen md:h-full flex flex-col justify-start md:justify-center px-6 sm:px-10 md:px-16 lg:px-24 pt-20 sm:pt-22 md:pt-24 pb-24 sm:pb-24 md:pb-16 lg:pb-18 overflow-visible"
     >
-      <div className="flex flex-col gap-6 md:gap-8">
+      <div className="my-auto w-full max-w-7xl mx-auto flex flex-col gap-4 md:gap-5 lg:gap-6">
         
         {/* Outpace Section Heading */}
-        <div className="flex flex-col gap-2 max-w-2xl">
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-[#ff4502]">
-            {"// CAPABILITIES"}
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] leading-[1.1] text-[#18181b]">
-            <span className="text-[#a1a1aa] font-medium">Design &amp; engineering firepower.</span>{" "}
-            <span>Zero fluff.</span>
+        <div className="flex flex-col gap-1.5 max-w-2xl">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-[-0.03em] leading-[1.12] text-[#18181b]">
+            <span className="text-[#a1a1aa] font-medium">Turning product ideas into</span> <br />
+            <span>scalable reality.</span>
           </h2>
-          <p className="text-xs sm:text-sm text-[#71717a] font-normal leading-relaxed mt-1">
-            From zero-to-one MVP builds to high-throughput scale, I deliver production systems and polished interfaces that get you funded, launched, and growing.
+          <p className="text-xs sm:text-sm text-[#71717a] font-normal leading-relaxed mt-0.5">
+            You don&apos;t need a bloated agency or months of meetings. You need clean architecture, modern user experiences, and rapid execution that helps your product win users and drive revenue.
           </p>
         </div>
 
-        {/* 4 Columns with Outpace Geometric Glyphs & Fudali Deliverables */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 pt-3 border-t border-[#e4e4e7]">
+        {/* 4 Columns with Outpace Geometric Glyphs & Deliverables */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 md:gap-4 lg:gap-5 pt-2 border-t border-[#e4e4e7]">
           {serviceColumns.map((col, idx) => (
             <div
               key={col.title}
-              className="touch-card flex flex-col items-start justify-between gap-3 p-5 rounded-2xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/40 hover:shadow-md transition-all duration-300 group"
+              className="touch-card flex flex-col items-start justify-between gap-3 p-4 sm:p-5 lg:p-6 rounded-2xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/40 hover:shadow-md transition-all duration-300 group"
             >
               <div className="w-full">
                 {/* Top Glyph & Index */}
@@ -140,7 +137,7 @@ export default function StudioServices() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold tracking-tight text-[#18181b] group-hover:text-[#ff4502] transition-colors mb-3">
+                <h3 className="text-base sm:text-lg font-bold tracking-tight text-[#18181b] group-hover:text-[#ff4502] transition-colors mb-2">
                   {col.title}
                 </h3>
 
@@ -149,21 +146,13 @@ export default function StudioServices() {
                   {col.items.map((item) => (
                     <li
                       key={item}
-                      className="text-xs sm:text-sm text-[#71717a] font-medium flex items-center gap-2"
+                      className="text-xs text-[#71717a] font-medium flex items-center gap-2"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-[#d4d4d8] group-hover:bg-[#ff4502] transition-colors flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              {/* Fudali Style Timeline Tag */}
-              <div className="w-full pt-3 border-t border-[#f4f4f5] flex items-center justify-between text-[11px] font-mono text-[#71717a]">
-                <span>Speed:</span>
-                <span className="font-semibold text-[#18181b] bg-[#f4f4f5] px-2 py-0.5 rounded-full">
-                  Shipped in 2-4 wks
-                </span>
               </div>
             </div>
           ))}

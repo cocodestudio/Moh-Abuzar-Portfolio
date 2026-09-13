@@ -67,18 +67,18 @@ export default function Footer() {
               <LinkedinIcon className="w-4 h-4" />
             </a>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/919045757272"
               target="_blank"
               rel="noreferrer"
               className="w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:border-emerald-400/50 transition-all"
-              aria-label="WhatsApp"
+              aria-label="WhatsApp (+91 9045757272)"
             >
               <MessageSquare className="w-4 h-4" />
             </a>
             <a
-              href="mailto:mohabuzar.dev@gmail.com"
+              href="mailto:support@cocodestudio.com"
               className="w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center text-gray-400 hover:text-amber-400 hover:border-amber-400/50 transition-all"
-              aria-label="Email"
+              aria-label="Email support@cocodestudio.com"
             >
               <Mail className="w-4 h-4" />
             </a>

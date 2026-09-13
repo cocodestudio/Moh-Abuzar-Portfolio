@@ -25,7 +25,7 @@ export default function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
-  const emailAddress = "mohabuzar.dev@gmail.com";
+  const emailAddress = "support@cocodestudio.com";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);

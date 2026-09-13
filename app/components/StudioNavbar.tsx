@@ -19,10 +19,10 @@ export default function StudioNavbar({
 
   const navItems = [
     { label: "Overview", id: "hero" },
-    { label: "Capabilities", id: "services" },
-    { label: "Tech Arsenal", id: "tech" },
-    { label: "Selected Work", id: "work" },
-    { label: "Success Journey", id: "journey" },
+    { label: "What I Do", id: "services" },
+    { label: "Stack", id: "tech" },
+    { label: "Work", id: "work" },
+    { label: "Journey", id: "journey" },
     { label: "About", id: "about" },
     { label: "Contact", id: "contact" },
   ];
@@ -38,30 +38,38 @@ export default function StudioNavbar({
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 md:px-10 md:py-6 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-5 sm:px-8 md:px-10 py-3 md:py-4 pointer-events-none">
       {/* Brand Logo & Company Title (CoCode Studio with User Logo) */}
       <div
         onClick={() => handleLinkClick("hero")}
-        className="pointer-events-auto flex items-center gap-3 cursor-pointer group select-none"
+        className="pointer-events-auto flex items-center gap-3 sm:gap-3.5 cursor-pointer group select-none"
       >
-        {/* User-Provided CoCode Studio Geometric Logo */}
-        <div className="relative w-9 h-9 rounded-xl bg-white border border-[#e4e4e7] flex items-center justify-center p-1.5 shadow-xs group-hover:border-[#ff4502] group-hover:shadow-md transition-all duration-300">
+        {/* Transparent, Standalone Logo without Box or White Background */}
+        <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 flex items-center justify-center">
+          {/* Subtle Ambient Backlight Glow on Hover */}
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-[#ff4502]/25 via-[#fbbf24]/15 to-transparent blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          
           <Image
             src="/images/cocode-logo-black.png"
             alt="CoCode Studio Logo"
-            width={24}
-            height={24}
+            fill
             priority
-            className="object-contain group-hover:scale-110 transition-transform duration-300"
+            className="object-contain animate-logo-glow group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ease-out"
+            sizes="(max-width: 768px) 40px, 48px"
           />
         </div>
 
+        {/* Distinct Design Typography with Continuous Shimmer Effect */}
         <div className="flex flex-col justify-center">
-          <span className="font-bold text-sm tracking-tight text-[#18181b] leading-tight group-hover:text-[#ff4502] transition-colors">
-            CoCode Studio
-          </span>
-          <span className="text-[10px] font-mono uppercase tracking-widest text-[#71717a] leading-none mt-0.5">
-            Founder
+          <div className="flex items-center gap-1.5">
+            <span className="brand-shimmer-text font-sans font-black text-base sm:text-lg tracking-[-0.035em] leading-none uppercase">
+              CoCode<span className="font-semibold text-[#18181b] opacity-80 tracking-tight ml-1 lowercase text-sm sm:text-base font-mono">.studio</span>
+            </span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ff4502] animate-ping-slow hidden sm:inline-block" />
+          </div>
+          <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.22em] text-[#71717a] font-semibold leading-none mt-1 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span>Senior Architect</span>
           </span>
         </div>
       </div>
@@ -88,14 +96,15 @@ export default function StudioNavbar({
 
       {/* Right CTA Actions (Desktop) */}
       <div className="pointer-events-auto hidden md:flex items-center gap-2.5">
-        {/* Book Call Button */}
-        <button
-          onClick={() => handleLinkClick("contact")}
-          className="btn-primary text-xs flex items-center gap-1.5 cursor-pointer"
+        {/* Book Call Button - Direct Dialpad */}
+        <a
+          href="tel:+919045757272"
+          className="btn-primary text-xs flex items-center gap-1.5 cursor-pointer no-underline"
+          title="Call +91 9045757272"
         >
           <span>Book Call</span>
           <ArrowUpRight className="w-3.5 h-3.5" />
-        </button>
+        </a>
       </div>
 
       {/* Mobile Hamburger Toggle */}
@@ -139,12 +148,14 @@ export default function StudioNavbar({
                   <FileText className="w-4 h-4 text-[#ff4502]" />
                   <span>View Full Resume</span>
                 </button>
-                <button
-                  onClick={() => handleLinkClick("contact")}
-                  className="w-full btn-accent py-3 text-center text-sm cursor-pointer"
+                <a
+                  href="tel:+919045757272"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full btn-accent py-3 text-center text-sm cursor-pointer no-underline flex items-center justify-center gap-2"
                 >
-                  Book a Call / Hire
-                </button>
+                  <span>Book Call / Dial +91 9045757272</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@ interface HorizontalScrollContainerProps {
   onOpenResume?: () => void;
 }
 
-const sectionIds = ["hero", "services", "tech", "work", "journey", "about", "process", "contact"];
+const sectionIds = ["hero", "services", "tech", "work", "journey", "about", "contact"];
 
 export default function HorizontalScrollContainer({
   children,
@@ -19,50 +19,69 @@ export default function HorizontalScrollContainer({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const targetScrollRef = useRef(0);
   const animIdRef = useRef<number | null>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const progressBarRef = useRef<HTMLDivElement | null>(null);
+  const mobileProgressFillRef = useRef<HTMLDivElement | null>(null);
   const [activeSection, setActiveSection] = useState("hero");
   const [isDesktop, setIsDesktop] = useState(false);
   const lenis = useLenis();
 
+  // Real-time desktop horizontal scroll progress & active section updater (zero layout thrashing, direct DOM)
+  const updateScrollProgress = useCallback((scrollLeft: number) => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    const progress = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0;
+    const clamped = Math.min(100, Math.max(0, progress));
+
+    // Direct DOM manipulation: 100% real-time, zero React re-render latency, zero CSS transition delay
+    if (progressBarRef.current) {
+      progressBarRef.current.style.width = `${Math.max(clamped, 2)}%`;
+    }
+    if (mobileProgressFillRef.current) {
+      mobileProgressFillRef.current.style.width = `${clamped}%`;
+    }
+
+    // Detect active section using offsetLeft without forced layout reflow
+    const currentScroll = scrollLeft + container.clientWidth * 0.35;
+    for (let i = sectionIds.length - 1; i >= 0; i--) {
+      const el = document.getElementById(sectionIds[i]);
+      if (el && el.offsetLeft <= currentScroll) {
+        const nextId = sectionIds[i];
+        setActiveSection((prev) => (prev !== nextId ? nextId : prev));
+        break;
+      }
+    }
+  }, []);
+
   // Check screen size for desktop horizontal scroll
   useEffect(() => {
     const checkScreen = () => {
-      setIsDesktop(window.innerWidth >= 768);
+      const isDesk = window.innerWidth >= 768;
+      setIsDesktop(isDesk);
+      if (isDesk && containerRef.current) {
+        updateScrollProgress(containerRef.current.scrollLeft);
+      }
     };
     checkScreen();
     window.addEventListener("resize", checkScreen);
     return () => window.removeEventListener("resize", checkScreen);
-  }, []);
+  }, [updateScrollProgress]);
 
-  // Update progress and active section
+  // Update progress and active section on native scroll events
   const handleScroll = useCallback(() => {
     const container = containerRef.current;
     if (!container) return;
 
     if (isDesktop) {
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      const progress = maxScroll > 0 ? (container.scrollLeft / maxScroll) * 100 : 0;
-      setScrollProgress(progress);
-
-      // Detect active section based on horizontal offset
-      const currentScroll = container.scrollLeft + container.clientWidth / 3;
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionIds[i]);
-        if (el) {
-          const elLeft =
-            el.getBoundingClientRect().left -
-            container.getBoundingClientRect().left +
-            container.scrollLeft;
-          if (elLeft <= currentScroll) {
-            setActiveSection(sectionIds[i]);
-            break;
-          }
-        }
-      }
+      updateScrollProgress(container.scrollLeft);
     } else {
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
-      setScrollProgress(progress);
+      const clamped = Math.min(100, Math.max(0, progress));
+      if (mobileProgressFillRef.current) {
+        mobileProgressFillRef.current.style.width = `${clamped}%`;
+      }
 
       const scrollPos = window.scrollY + 200;
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -70,13 +89,14 @@ export default function HorizontalScrollContainer({
         if (el) {
           const elTop = el.getBoundingClientRect().top + window.scrollY;
           if (elTop <= scrollPos) {
-            setActiveSection(sectionIds[i]);
+            const nextId = sectionIds[i];
+            setActiveSection((prev) => (prev !== nextId ? nextId : prev));
             break;
           }
         }
       }
     }
-  }, [isDesktop]);
+  }, [isDesktop, updateScrollProgress]);
 
   // Desktop wheel listener: converts vertical mouse wheel into silky smooth horizontal scroll
   useEffect(() => {
@@ -91,10 +111,13 @@ export default function HorizontalScrollContainer({
       const current = container.scrollLeft;
       const diff = targetScrollRef.current - current;
       if (Math.abs(diff) > 0.4) {
-        container.scrollLeft = current + diff * 0.14;
+        const next = current + diff * 0.18;
+        container.scrollLeft = next;
+        updateScrollProgress(next);
         animIdRef.current = requestAnimationFrame(smoothScrollLoop);
       } else {
         container.scrollLeft = targetScrollRef.current;
+        updateScrollProgress(targetScrollRef.current);
         animIdRef.current = null;
       }
     };
@@ -123,6 +146,7 @@ export default function HorizontalScrollContainer({
     const syncScroll = () => {
       if (!animIdRef.current) {
         targetScrollRef.current = container.scrollLeft;
+        updateScrollProgress(container.scrollLeft);
       }
     };
 
@@ -133,7 +157,7 @@ export default function HorizontalScrollContainer({
       container.removeEventListener("scroll", syncScroll);
       if (animIdRef.current) cancelAnimationFrame(animIdRef.current);
     };
-  }, [isDesktop]);
+  }, [isDesktop, updateScrollProgress]);
 
   // Attach scroll listeners
   useEffect(() => {
@@ -158,11 +182,7 @@ export default function HorizontalScrollContainer({
 
     if (isDesk && containerRef.current) {
       const container = containerRef.current;
-      const targetLeft =
-        el.getBoundingClientRect().left -
-        container.getBoundingClientRect().left +
-        container.scrollLeft;
-
+      const targetLeft = el.offsetLeft;
       const maxScroll = container.scrollWidth - container.clientWidth;
       const boundedTarget = Math.max(0, Math.min(maxScroll, targetLeft));
 
@@ -176,10 +196,13 @@ export default function HorizontalScrollContainer({
         const current = container.scrollLeft;
         const diff = targetScrollRef.current - current;
         if (Math.abs(diff) > 0.5) {
-          container.scrollLeft = current + diff * 0.15;
+          const next = current + diff * 0.18;
+          container.scrollLeft = next;
+          updateScrollProgress(next);
           animIdRef.current = requestAnimationFrame(smoothNavLoop);
         } else {
           container.scrollLeft = targetScrollRef.current;
+          updateScrollProgress(targetScrollRef.current);
           animIdRef.current = null;
         }
       };
@@ -200,6 +223,41 @@ export default function HorizontalScrollContainer({
       }
     }
     setActiveSection(id);
+  };
+
+  // Interactive scrubbing: click anywhere along the track to jump smoothly
+  const handleTrackClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const track = e.currentTarget;
+    const rect = track.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const ratio = Math.max(0, Math.min(1, clickX / rect.width));
+    const container = containerRef.current;
+    if (!container) return;
+
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    const targetScroll = ratio * maxScroll;
+    targetScrollRef.current = targetScroll;
+
+    if (animIdRef.current) {
+      cancelAnimationFrame(animIdRef.current);
+    }
+
+    const smoothNavLoop = () => {
+      const current = container.scrollLeft;
+      const diff = targetScrollRef.current - current;
+      if (Math.abs(diff) > 0.5) {
+        const next = current + diff * 0.18;
+        container.scrollLeft = next;
+        updateScrollProgress(next);
+        animIdRef.current = requestAnimationFrame(smoothNavLoop);
+      } else {
+        container.scrollLeft = targetScrollRef.current;
+        updateScrollProgress(targetScrollRef.current);
+        animIdRef.current = null;
+      }
+    };
+
+    animIdRef.current = requestAnimationFrame(smoothNavLoop);
   };
 
   return (
@@ -228,12 +286,21 @@ export default function HorizontalScrollContainer({
         onOpenResume={onOpenResume}
       />
 
+      {/* Mobile Live Progress Bar (Top) */}
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 h-[2.5px] bg-[#e4e4e7]/60 pointer-events-none">
+        <div
+          ref={mobileProgressFillRef}
+          className="h-full bg-[#ff4502] will-change-[width]"
+          style={{ width: "0%" }}
+        />
+      </div>
+
       {/* Bottom Horizontal Progress Bar (Desktop) */}
-      <div className="hidden md:flex fixed bottom-0 left-0 right-0 z-40 px-10 py-4 items-center justify-between pointer-events-none bg-gradient-to-t from-[#f9f9f8] to-transparent">
+      <div className="hidden md:flex fixed bottom-0 left-0 right-0 z-40 px-6 lg:px-12 py-3.5 items-center justify-between pointer-events-none bg-gradient-to-t from-[#f9f9f8] via-[#f9f9f8]/90 to-transparent">
         
         {/* Section Pill Breadcrumb */}
         <div className="pointer-events-auto flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#ff4502]" />
+          <span className="w-2 h-2 rounded-full bg-[#ff4502] animate-pulse" />
           <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#18181b]">
             {activeSection.toUpperCase()}
           </span>
@@ -242,18 +309,25 @@ export default function HorizontalScrollContainer({
           </span>
         </div>
 
-        {/* Scroll Bar Track */}
-        <div className="pointer-events-auto w-48 h-1 bg-[#e4e4e7] rounded-full overflow-hidden">
+        {/* Scroll Bar Track with Interactive Scrubbing */}
+        <div className="pointer-events-auto flex items-center">
           <div
-            className="h-full bg-[#ff4502] rounded-full transition-all duration-150 ease-out"
-            style={{ width: `${Math.max(scrollProgress, 5)}%` }}
-          />
+            onClick={handleTrackClick}
+            className="w-56 sm:w-64 lg:w-80 h-1.5 hover:h-2 bg-[#e4e4e7] hover:bg-[#d4d4d8] rounded-full overflow-hidden cursor-pointer transition-all relative flex items-center"
+            title="Click to jump along the timeline"
+          >
+            <div
+              ref={progressBarRef}
+              className="h-full bg-[#ff4502] rounded-full will-change-[width]"
+              style={{ width: "2%" }}
+            />
+          </div>
         </div>
 
         {/* Horizontal Scroll Hint */}
         <div className="text-xs font-mono text-[#a1a1aa] flex items-center gap-1.5">
           <span>SCROLL HORIZONTALLY</span>
-          <span>→</span>
+          <span className="text-[#ff4502]">→</span>
         </div>
 
       </div>

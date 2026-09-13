@@ -8,7 +8,6 @@ import StudioTechStack from "./components/StudioTechStack";
 import StudioWork from "./components/StudioWork";
 import StudioJourney from "./components/StudioJourney";
 import StudioAbout from "./components/StudioAbout";
-import StudioProcess from "./components/StudioProcess";
 import StudioContact from "./components/StudioContact";
 import ResumeModal from "./components/ResumeModal";
 
@@ -24,7 +23,6 @@ export default function Home() {
         <StudioWork />
         <StudioJourney />
         <StudioAbout />
-        <StudioProcess />
         <StudioContact />
       </HorizontalScrollContainer>
 

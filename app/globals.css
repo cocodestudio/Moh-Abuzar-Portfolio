@@ -279,6 +279,41 @@ body {
   animation-play-state: paused;
 }
 
+/* CoCode Studio Distinct Brand Shimmer & Ambient Float */
+@keyframes brand-shimmer {
+  0% {
+    background-position: 220% center;
+  }
+  100% {
+    background-position: -220% center;
+  }
+}
 
+.brand-shimmer-text {
+  background: linear-gradient(
+    110deg,
+    #18181b 0%,
+    #18181b 36%,
+    #ff4502 48%,
+    #fb923c 54%,
+    #18181b 66%,
+    #18181b 100%
+  );
+  background-size: 260% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brand-shimmer 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
 
+@keyframes logo-subtle-glow {
+  0%, 100% {
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
+  }
+  50% {
+    filter: drop-shadow(0 4px 14px rgba(255, 69, 2, 0.28)) drop-shadow(0 0 6px rgba(251, 146, 60, 0.2));
+  }
+}
 
+.animate-logo-glow {
+  animation: logo-subtle-glow 4s ease-in-out infinite;
+}
