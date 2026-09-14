@@ -1,0 +1,78 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="en-bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#070d18"/>
+      <stop offset="50%" stop-color="#0a1426"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="en-cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="en-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" rx="16" fill="url(#en-bg)"/>
+  <circle cx="400" cy="225" r="160" fill="#06b6d4" opacity="0.1" filter="url(#en-glow)"/>
+  <circle cx="580" cy="130" r="130" fill="#10b981" opacity="0.08" filter="url(#en-glow)"/>
+
+  <!-- Phone Mockup Container -->
+  <g transform="translate(250, 25)">
+    <!-- Phone Shell -->
+    <rect x="0" y="0" width="300" height="400" rx="28" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+    <rect x="6" y="6" width="288" height="388" rx="24" fill="#030712"/>
+
+    <!-- Status Bar / Notch -->
+    <rect x="100" y="12" width="100" height="18" rx="9" fill="#0f172a"/>
+    <circle cx="120" cy="21" r="3.5" fill="#334155"/>
+
+    <!-- App Header -->
+    <text x="24" y="55" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="16">Entrixo</text>
+    <rect x="156" y="42" width="110" height="20" rx="10" fill="#10b981" fill-opacity="0.15"/>
+    <text x="168" y="56" fill="#10b981" font-family="monospace" font-weight="bold" font-size="10">● LAB #03 ACTIVE</text>
+
+    <!-- Subtitle -->
+    <text x="24" y="76" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Smart Anti-Proxy Lab Attendance</text>
+
+    <!-- Anti-Proxy Verification Shield / Radar Box -->
+    <rect x="24" y="94" width="242" height="180" rx="20" fill="#090d16" stroke="#06b6d4" stroke-width="1.5" stroke-opacity="0.4"/>
+    
+    <!-- Radar Rings -->
+    <circle cx="145" cy="170" r="60" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+    <circle cx="145" cy="170" r="40" stroke="#06b6d4" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="145" cy="170" r="20" fill="#06b6d4" fill-opacity="0.15"/>
+
+    <!-- QR / Face Biometric Graphic in center -->
+    <rect x="125" y="150" width="40" height="40" rx="8" fill="#06b6d4" fill-opacity="0.25" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="135" y="177" font-size="20">🛡️</text>
+
+    <!-- Rotating Dynamic Code Bar -->
+    <rect x="54" y="244" width="182" height="20" rx="10" fill="#0f172a"/>
+    <text x="70" y="258" fill="#38bdf8" font-family="monospace" font-weight="bold" font-size="9">OTP: 849-204 (Expires in 8s)</text>
+
+    <!-- Verified Student Status Card -->
+    <rect x="24" y="286" width="242" height="84" rx="16" fill="#0b1324" stroke="#10b981" stroke-width="1.5" stroke-opacity="0.7"/>
+    <circle cx="48" cy="318" r="14" fill="#10b981" fill-opacity="0.2"/>
+    <text x="42" y="323" fill="#10b981" font-size="14">✓</text>
+    
+    <text x="70" y="312" fill="#10b981" font-family="monospace" font-weight="bold" font-size="10">ATTENDANCE VERIFIED</text>
+    <text x="70" y="328" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">Moh Abuzar — Roll #42</text>
+    <text x="70" y="344" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Geofence: Inside Lab • 100% Genuine</text>
+  </g>
+
+  <!-- Side Floating Badges -->
+  <g transform="translate(60, 160)">
+    <rect width="160" height="52" rx="12" fill="#0b1324" fill-opacity="0.9" stroke="#1e293b"/>
+    <text x="14" y="22" fill="#06b6d4" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">● Geofence Lock</text>
+    <text x="14" y="40" fill="#94a3b8" font-family="monospace" font-size="9">Radius: 15m Lab Perimeter</text>
+  </g>
+
+  <g transform="translate(580, 240)">
+    <rect width="160" height="52" rx="12" fill="#0b1324" fill-opacity="0.9" stroke="#1e293b"/>
+    <text x="14" y="22" fill="#10b981" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">● 0% Proxy Rate</text>
+    <text x="14" y="40" fill="#94a3b8" font-family="monospace" font-size="9">Rotating QR + Biometrics</text>
+  </g>
+</svg>
