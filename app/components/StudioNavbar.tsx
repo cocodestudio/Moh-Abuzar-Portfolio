@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Menu, X, FileText } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 interface StudioNavbarProps {
   onNavigate?: (sectionId: string) => void;
@@ -15,7 +14,6 @@ export default function StudioNavbar({
   onOpenResume,
   activeSection = "hero",
 }: StudioNavbarProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     { label: "Overview", id: "hero" },
@@ -28,7 +26,6 @@ export default function StudioNavbar({
   ];
 
   const handleLinkClick = (id: string) => {
-    setMobileMenuOpen(false);
     if (onNavigate) {
       onNavigate(id);
     } else {
@@ -94,73 +91,17 @@ export default function StudioNavbar({
         })}
       </nav>
 
-      {/* Right CTA Actions (Desktop) */}
-      <div className="pointer-events-auto hidden md:flex items-center gap-2.5">
-        {/* Book Call Button - Direct Dialpad */}
+      {/* Right CTA Action */}
+      <div className="pointer-events-auto flex items-center gap-2">
         <a
           href="tel:+919045757272"
-          className="btn-primary text-xs flex items-center gap-1.5 cursor-pointer no-underline"
+          className="btn-primary text-xs flex items-center gap-1.5 cursor-pointer no-underline py-1.5 px-3.5 sm:px-4"
           title="Call +91 9045757272"
         >
           <span>Book Call</span>
           <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
       </div>
-
-      {/* Mobile Hamburger Toggle */}
-      <div className="pointer-events-auto flex md:hidden items-center gap-2">
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2.5 rounded-full bg-white border border-[#e4e4e7] text-[#18181b] shadow-xs cursor-pointer"
-          aria-label="Toggle Menu"
-        >
-          {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-        </button>
-      </div>
-
-      {/* Mobile Drawer Backdrop & Drawer */}
-      {mobileMenuOpen && (
-        <>
-          <div
-            onClick={() => setMobileMenuOpen(false)}
-            className="pointer-events-auto md:hidden fixed inset-0 bg-black/25 backdrop-blur-xs z-40 animate-in fade-in duration-150"
-          />
-          <div className="pointer-events-auto md:hidden fixed inset-x-4 top-20 bg-white/95 backdrop-blur-xl border border-[#e4e4e7] rounded-3xl p-6 shadow-xl z-50 animate-in fade-in slide-in-from-top-3 duration-200">
-            <div className="flex flex-col gap-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleLinkClick(item.id)}
-                  className="w-full py-2.5 px-4 rounded-xl text-left font-medium text-sm text-[#18181b] hover:bg-[#f4f4f5] flex items-center justify-between cursor-pointer"
-                >
-                  <span>{item.label}</span>
-                  <span className="text-xs text-[#71717a]">→</span>
-                </button>
-              ))}
-              <div className="pt-4 border-t border-[#e4e4e7] mt-2 flex flex-col gap-2">
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    if (onOpenResume) onOpenResume();
-                  }}
-                  className="w-full btn-secondary py-2.5 text-center text-xs flex items-center justify-center gap-1.5 cursor-pointer"
-                >
-                  <FileText className="w-4 h-4 text-[#ff4502]" />
-                  <span>View Full Resume</span>
-                </button>
-                <a
-                  href="tel:+919045757272"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full btn-accent py-3 text-center text-sm cursor-pointer no-underline flex items-center justify-center gap-2"
-                >
-                  <span>Book Call / Dial +91 9045757272</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
     </header>
   );
 }

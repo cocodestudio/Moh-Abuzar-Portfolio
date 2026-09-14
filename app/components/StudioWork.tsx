@@ -93,7 +93,7 @@ export default function StudioWork() {
   return (
     <section
       id="work"
-      className="flex-shrink-0 w-full md:w-screen min-h-screen md:h-full flex flex-col justify-start md:justify-center px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-20 sm:pt-22 md:pt-20 pb-20 sm:pb-24 md:pb-16 overflow-visible"
+      className="flex-shrink-0 w-full md:w-screen md:min-h-screen md:h-full flex flex-col justify-start md:justify-center px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-8 md:py-0 md:pt-20 md:pb-16 overflow-visible"
     >
       {/* Floating "Live Project" Cursor Badge */}
       {hoveringCard && (
@@ -109,7 +109,7 @@ export default function StudioWork() {
         </div>
       )}
 
-      <div className="my-auto w-full max-w-7xl mx-auto flex flex-col gap-3.5 md:gap-4 lg:gap-5">
+      <div className="w-full md:my-auto max-w-7xl mx-auto flex flex-col gap-3.5 md:gap-4 lg:gap-5">
         
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-2.5">
@@ -137,7 +137,7 @@ export default function StudioWork() {
               rel="noopener noreferrer"
               onMouseEnter={() => setHoveringCard(true)}
               onMouseLeave={() => setHoveringCard(false)}
-              className="relative studio-card touch-card p-3 sm:p-3.5 lg:p-4 rounded-2xl md:rounded-3xl flex flex-col justify-between overflow-hidden cursor-pointer group hover:border-[#ff4502]/50 hover:shadow-lg transition-all duration-300 no-underline"
+              className="relative studio-card touch-card card-3d card-3d-shine p-3.5 sm:p-4 lg:p-4.5 rounded-2xl md:rounded-3xl flex flex-col justify-between overflow-hidden cursor-pointer group hover:border-[#ff4502]/50 hover:shadow-lg transition-all duration-300 no-underline"
               title={`Open ${study.title} in new tab`}
             >
               {/* Subtle Gradient Fill */}

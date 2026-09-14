@@ -35,9 +35,9 @@ export default function StudioContact() {
   return (
     <section
       id="contact"
-      className="flex-shrink-0 w-full md:w-screen min-h-screen md:h-full flex flex-col justify-start md:justify-center px-6 sm:px-10 md:px-16 lg:px-24 pt-20 sm:pt-22 md:pt-24 pb-24 sm:pb-24 md:pb-16 lg:pb-18 overflow-visible"
+      className="flex-shrink-0 w-full md:w-screen md:min-h-screen md:h-full flex flex-col justify-start md:justify-center px-5 sm:px-10 md:px-16 lg:px-24 py-8 pb-16 md:py-0 md:pt-24 md:pb-16 lg:pb-18 overflow-visible"
     >
-      <div className="my-auto w-full max-w-7xl mx-auto flex flex-col gap-4 md:gap-5 lg:gap-6">
+      <div className="w-full md:my-auto max-w-7xl mx-auto flex flex-col gap-4 md:gap-5 lg:gap-6">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 max-w-3xl">
@@ -56,7 +56,7 @@ export default function StudioContact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 md:gap-4 lg:gap-5 pt-2 border-t border-[#e4e4e7]">
           
           {/* Card 1: WhatsApp Connect */}
-          <div className="touch-card p-4 sm:p-5 lg:p-6 rounded-2xl md:rounded-3xl bg-white border border-[#e4e4e7] hover:border-emerald-500/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+          <div className="touch-card card-3d card-3d-shine p-4 sm:p-5 lg:p-6 rounded-2xl md:rounded-3xl bg-white border border-[#e4e4e7] hover:border-emerald-500/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-3.5">
                 <div className="relative w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shadow-xs">
@@ -101,7 +101,7 @@ export default function StudioContact() {
           </div>
 
           {/* Card 2: Email Support (Studio & Personal) */}
-          <div className="touch-card p-4 sm:p-5 lg:p-6 rounded-2xl md:rounded-3xl bg-white border border-[#e4e4e7] hover:border-[#18181b] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+          <div className="touch-card card-3d card-3d-shine p-4 sm:p-5 lg:p-6 rounded-2xl md:rounded-3xl bg-white border border-[#e4e4e7] hover:border-[#18181b] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-3.5">
                 <div className="w-10 h-10 rounded-xl bg-[#f4f4f5] text-[#18181b] flex items-center justify-center shadow-xs">
@@ -191,7 +191,7 @@ export default function StudioContact() {
           </div>
 
           {/* Card 3: Phone Support & Dialpad Book Call */}
-          <div className="touch-card p-4 sm:p-5 lg:p-6 rounded-2xl md:rounded-3xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+          <div className="touch-card card-3d card-3d-shine p-4 sm:p-5 lg:p-6 rounded-2xl md:rounded-3xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-3.5">
                 <div className="w-10 h-10 rounded-xl bg-[#ff4502]/10 text-[#ff4502] flex items-center justify-center shadow-xs">

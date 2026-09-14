@@ -3,7 +3,6 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import { useLenis } from "lenis/react";
 import StudioNavbar from "./StudioNavbar";
-import MobileDock from "./MobileDock";
 
 interface HorizontalScrollContainerProps {
   children: React.ReactNode;
@@ -279,12 +278,6 @@ export default function HorizontalScrollContainer({
         {children}
       </div>
 
-      {/* Floating Action Dock (Mobile Only) */}
-      <MobileDock
-        activeSection={activeSection}
-        onNavigate={scrollToSection}
-        onOpenResume={onOpenResume}
-      />
 
       {/* Mobile Live Progress Bar (Top) */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 h-[2.5px] bg-[#e4e4e7]/60 pointer-events-none">

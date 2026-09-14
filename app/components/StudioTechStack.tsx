@@ -57,9 +57,9 @@ export default function StudioTechStack() {
   return (
     <section
       id="tech"
-      className="flex-shrink-0 w-full md:w-screen min-h-screen md:h-full flex flex-col justify-start md:justify-center px-6 sm:px-10 md:px-16 lg:px-24 pt-20 sm:pt-22 md:pt-24 pb-24 sm:pb-24 md:pb-16 lg:pb-18 overflow-visible"
+      className="flex-shrink-0 w-full md:w-screen md:min-h-screen md:h-full flex flex-col justify-start md:justify-center px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-0 md:pt-24 md:pb-16 lg:pb-18 overflow-visible"
     >
-      <div className="my-auto w-full max-w-7xl mx-auto flex flex-col gap-4 md:gap-5 lg:gap-6">
+      <div className="w-full md:my-auto max-w-7xl mx-auto flex flex-col gap-4 md:gap-5 lg:gap-6">
         
         {/* Header - Simple & Professional with Clear Clearance */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
@@ -79,7 +79,7 @@ export default function StudioTechStack() {
           {coreTechnologies.map((tech) => (
             <div
               key={tech.name}
-              className="touch-card p-4 sm:p-4.5 lg:p-5 rounded-2xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+              className="touch-card card-3d card-3d-shine p-4 sm:p-4.5 lg:p-5 rounded-2xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
             >
               <div>
                 {/* Top Meta */}

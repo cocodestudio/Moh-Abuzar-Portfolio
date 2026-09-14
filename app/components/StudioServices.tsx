@@ -103,9 +103,9 @@ export default function StudioServices() {
   return (
     <section
       id="services"
-      className="flex-shrink-0 w-full md:w-screen min-h-screen md:h-full flex flex-col justify-start md:justify-center px-6 sm:px-10 md:px-16 lg:px-24 pt-20 sm:pt-22 md:pt-24 pb-24 sm:pb-24 md:pb-16 lg:pb-18 overflow-visible"
+      className="flex-shrink-0 w-full md:w-screen md:min-h-screen md:h-full flex flex-col justify-start md:justify-center px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-0 md:pt-24 md:pb-16 lg:pb-18 overflow-visible"
     >
-      <div className="my-auto w-full max-w-7xl mx-auto flex flex-col gap-4 md:gap-5 lg:gap-6">
+      <div className="w-full md:my-auto max-w-7xl mx-auto flex flex-col gap-4 md:gap-5 lg:gap-6">
         
         {/* Outpace Section Heading */}
         <div className="flex flex-col gap-1.5 max-w-2xl">
@@ -123,12 +123,12 @@ export default function StudioServices() {
           {serviceColumns.map((col, idx) => (
             <div
               key={col.title}
-              className="touch-card flex flex-col items-start justify-between gap-3 p-4 sm:p-5 lg:p-6 rounded-2xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/40 hover:shadow-md transition-all duration-300 group"
+              className="touch-card card-3d card-3d-shine flex flex-col items-start justify-between gap-3 p-4 sm:p-5 lg:p-6 rounded-2xl bg-white border border-[#e4e4e7] hover:border-[#ff4502]/40 hover:shadow-md transition-all duration-300 group"
             >
               <div className="w-full">
                 {/* Top Glyph & Index */}
                 <div className="flex items-center justify-between w-full mb-3">
-                  <div className="group-hover:scale-110 transition-transform duration-300">
+                  <div className="group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                     {col.glyph}
                   </div>
                   <span className="text-xs font-mono text-[#a1a1aa] font-semibold">

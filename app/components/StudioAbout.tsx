@@ -13,9 +13,9 @@ export default function StudioAbout() {
   return (
     <section
       id="about"
-      className="flex-shrink-0 w-full md:w-screen min-h-screen md:h-full flex flex-col justify-start md:justify-center px-6 sm:px-10 md:px-16 lg:px-24 pt-20 sm:pt-22 md:pt-24 pb-24 sm:pb-24 md:pb-16 lg:pb-18 overflow-visible"
+      className="flex-shrink-0 w-full md:w-screen md:min-h-screen md:h-full flex flex-col justify-start md:justify-center px-5 sm:px-10 md:px-16 lg:px-24 py-8 md:py-0 md:pt-24 md:pb-16 lg:pb-18 overflow-visible"
     >
-      <div className="my-auto w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-center">
+      <div className="w-full md:my-auto max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-center">
 
         {/* Left Column: Seamless Transparent Portrait 2 */}
         <div className="md:col-span-5 flex justify-center items-center relative select-none">
@@ -23,7 +23,7 @@ export default function StudioAbout() {
           {/* Ambient Studio Lighting Glow */}
           <div className="absolute w-64 sm:w-72 h-64 sm:h-72 rounded-full bg-gradient-to-tr from-[#ff4502]/15 via-[#fbbf24]/10 to-transparent blur-3xl pointer-events-none -z-10 animate-ambient-pulse" />
 
-          <div className="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[300px] lg:max-w-[360px] h-[320px] sm:h-[380px] md:h-[40vh] lg:h-[460px] max-h-[480px] flex items-end justify-center group">
+          <div className="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[300px] lg:max-w-[360px] h-[260px] sm:h-[340px] md:h-[40vh] lg:h-[460px] max-h-[480px] flex items-end justify-center group animate-float-3d">
 
             {/* Seamless Portrait Fade */}
             <div
