@@ -1,13 +1,13 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
 
 const nextConfig: NextConfig = {
   output: "export",
   images: {
     unoptimized: true,
   },
-  basePath: isProd ? "/Moh-Abuzar-Portfolio" : "",
+  basePath: isGithubActions ? "/Moh-Abuzar-Portfolio" : "",
 };
 
 export default nextConfig;
