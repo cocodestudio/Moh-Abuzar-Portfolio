@@ -18,19 +18,19 @@ export default function StudioAbout() {
       <div className="w-full md:my-auto max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-center">
 
         {/* Left Column: Seamless Transparent Portrait 2 */}
-        <div className="md:col-span-5 flex justify-center items-center relative select-none">
+        <div className="md:col-span-5 flex flex-col items-center justify-center relative select-none">
 
           {/* Ambient Studio Lighting Glow */}
           <div className="absolute w-64 sm:w-72 h-64 sm:h-72 rounded-full bg-gradient-to-tr from-[#ff4502]/15 via-[#fbbf24]/10 to-transparent blur-3xl pointer-events-none -z-10 animate-ambient-pulse" />
 
-          <div className="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[300px] lg:max-w-[360px] h-[260px] sm:h-[340px] md:h-[40vh] lg:h-[460px] max-h-[480px] flex items-end justify-center group animate-float-3d">
+          <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[300px] lg:max-w-[360px] h-[320px] sm:h-[380px] md:h-[40vh] lg:h-[460px] max-h-[480px] flex items-end justify-center group animate-float-3d">
 
             {/* Seamless Portrait Fade */}
             <div
               className="relative w-full h-full"
               style={{
-                maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                maskImage: "linear-gradient(to bottom, black 88%, transparent 100%)",
+                WebkitMaskImage: "linear-gradient(to bottom, black 88%, transparent 100%)",
               }}
             >
               <Image
@@ -39,11 +39,12 @@ export default function StudioAbout() {
                 fill
                 className="object-contain object-bottom filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.12)] group-hover:scale-105 transition-transform duration-700"
                 sizes="(max-width: 768px) 100vw, 380px"
+                priority
               />
             </div>
 
-            {/* Editorial Caption Tag */}
-            <div className="absolute bottom-3 left-2 right-2 bg-white/95 backdrop-blur-md border border-[#e4e4e7] rounded-xl sm:rounded-2xl p-2.5 sm:p-3 shadow-md shadow-black/5 z-20">
+            {/* Editorial Caption Tag (Desktop Only - Kept Exactly As Was) */}
+            <div className="hidden md:block absolute bottom-3 left-2 right-2 bg-white/95 backdrop-blur-md border border-[#e4e4e7] rounded-xl sm:rounded-2xl p-2.5 sm:p-3 shadow-md shadow-black/5 z-20">
               <span className="text-[10px] font-mono uppercase tracking-widest text-[#ff4502] block mb-0.5">
                 Founder Philosophy
               </span>
@@ -53,6 +54,17 @@ export default function StudioAbout() {
             </div>
 
           </div>
+
+          {/* Mobile Founder Philosophy Card (Cleanly Placed Below Photo, Face 100% Visible) */}
+          <div className="md:hidden w-full max-w-[280px] sm:max-w-[320px] bg-white border border-[#e4e4e7] rounded-2xl p-3.5 shadow-xs mt-3 z-20 card-3d card-3d-shine text-left">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#ff4502] block mb-1 font-semibold">
+              Founder Philosophy
+            </span>
+            <p className="text-xs font-medium text-[#18181b] leading-relaxed">
+              &ldquo;Great software isn&apos;t built by corporate committees. It is forged by obsessive builders who treat your vision like their own company: zero fluff, relentless execution, and code built to dominate.&rdquo;
+            </p>
+          </div>
+
         </div>
 
         {/* Right Column: Narrative & Big Numbers */}

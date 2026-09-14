@@ -260,7 +260,7 @@ export default function HorizontalScrollContainer({
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-[#f9f9f8] overflow-x-hidden md:h-screen md:overflow-hidden">
+    <div className="relative w-full min-h-screen bg-[#f9f9f8] overflow-x-hidden md:h-screen md:overflow-hidden scroll-pt-16 md:scroll-pt-0">
       
       {/* Studio Header */}
       <StudioNavbar
@@ -280,7 +280,7 @@ export default function HorizontalScrollContainer({
 
 
       {/* Mobile Live Progress Bar (Top) */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 h-[2.5px] bg-[#e4e4e7]/60 pointer-events-none">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-[60] h-[2.5px] bg-transparent pointer-events-none">
         <div
           ref={mobileProgressFillRef}
           className="h-full bg-[#ff4502] will-change-[width]"

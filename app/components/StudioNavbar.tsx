@@ -35,7 +35,7 @@ export default function StudioNavbar({
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-5 sm:px-8 md:px-10 py-3 md:py-4 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 bg-[#f9f9f8]/95 backdrop-blur-md border-b border-[#e4e4e7] shadow-2xs md:bg-transparent md:backdrop-blur-none md:border-b-0 md:shadow-none md:pointer-events-none transition-all">
       {/* Brand Logo & Company Title (CoCode Studio with User Logo) */}
       <div
         onClick={() => handleLinkClick("hero")}
